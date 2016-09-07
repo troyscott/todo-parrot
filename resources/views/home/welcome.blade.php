@@ -10,4 +10,12 @@
 </ul>
 @endsection
 
+@section('advertisement')
+	@parent
+    <p>
+    	Buy TODOParrot Productivity guide $10!
+    </p>
+
+@endsection
+
 
