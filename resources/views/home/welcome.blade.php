@@ -1,10 +1,5 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Welcome to TODOParrot</title>
-</head>
-<body>
+@extends('layouts.master')
+@section('content')
 <h1>Welcome to TODOParrot</h1>
 <ul>
 	@forelse ($lists as $list)
@@ -13,6 +8,6 @@
     	<li>No Data</li>
     @endforelse
 </ul>
+@endsection
 
-</body>
-</html>
+

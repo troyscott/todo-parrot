@@ -2,8 +2,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Untitled Document</title>
+<title>Welcome to TODOParrot</title>
 </head>
+
+@yield('content')
 
 <body>
 </body>
