@@ -6,8 +6,13 @@
 </head>
 <body>
 <h1>Welcome to TODOParrot</h1>
-{{-- Output the $name variable --}}
-<p>{{ $name }}</p>
-<p>{{ $date }}</p>
+<ul>
+	@forelse ($lists as $list)
+    	<li>{{ $list }} </li>
+    @empty
+    	<li>No Data</li>
+    @endforelse
+</ul>
+
 </body>
 </html>

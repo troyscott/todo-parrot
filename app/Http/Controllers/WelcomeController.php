@@ -15,8 +15,8 @@ class WelcomeController extends Controller
 		
 		\Debugbar::info('Welcome Controller - index');
 	
-		$data = array('name' => 'My Trip', 'date' => date('2016-09-02'));		
-		return view('home.welcome')->with($data);
+		$lists = array('Vacation Planning' , 'Grocery Shopping', 'Camping Trip');		
+		return view('home.welcome')->with('lists', $lists);
 		
 	}
 	
