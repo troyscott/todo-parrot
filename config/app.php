@@ -170,7 +170,7 @@ return [
         //
 
 		Barryvdh\Debugbar\ServiceProvider::class,
-
+		Collective\Html\HtmlServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -229,7 +229,7 @@ return [
 
 		// Addons
 		'Debugbar' => Barryvdh\Debugbar\Facade::class,
-
+		'HTML' => Collective\Html\HtmlFacade::class,
     ],
 
 ];

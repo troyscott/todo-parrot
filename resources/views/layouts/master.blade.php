@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Welcome to TODOParrot</title>
-<link rel="stylesheet" href="/css/app.css">
+{!! HTML::style('css/app.css') !!}
 <script src="/js/app.js" ></script>
 
 </head>
