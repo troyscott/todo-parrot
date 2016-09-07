@@ -8,5 +8,6 @@
 <h1>Welcome to TODOParrot</h1>
 {{-- Output the $name variable --}}
 <p>{{ $name }}</p>
+<p>{{ $date }}</p>
 </body>
 </html>
