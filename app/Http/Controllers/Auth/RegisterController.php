@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Todoparrot\Http\Controllers\Auth;
 
-use App\User;
+use Todoparrot\User;
 use Validator;
-use App\Http\Controllers\Controller;
+use Todoparrot\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
