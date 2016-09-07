@@ -12,14 +12,18 @@ class WelcomeController extends Controller
 	public function index()
 	{
 	
-		$items = [
-			'items' => [
-				'Pack luggage',
-				'Go to airport',
-				'Arrive in San Juan'
-			]
-		];	
-		dd($items);
+		$monolog = \Log::getMonolog();
+		$items = ['Pack luggage', 'Go to airport', 'Arrive in San Juan'];
+		$monolog->pushHandler(new \Monolog\Handler\FirePHPHandler());
+		$monolog->addInfo('Log Message', array('items' => $items));
+		
+		
+		// Output as html to browser
+		// dd($items);
+		// Output to laravel.log
+		//\Log::debug($items);
+		
+		
 		
 		return view('welcome');
 		
