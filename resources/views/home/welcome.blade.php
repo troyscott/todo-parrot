@@ -15,7 +15,7 @@
     <p>
     	Buy TODOParrot Productivity guide $10!
     </p>
-
+	<a href="/about/contact" class="btn btn-primary">Contact Us</a>
 @endsection
 
 
