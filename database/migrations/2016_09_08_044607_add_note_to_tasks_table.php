@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTodolistsTable extends Migration
+class AddNoteToTasksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,11 @@ class CreateTodolistsTable extends Migration
      */
     public function up()
     {
-        Schema::create('todolists', function (Blueprint $table) {
-            $table->increments('id');
-			$table->string('name');
-			$table->text('description');
-            $table->timestamps();
+        Schema::table('todolists', function (Blueprint $table) {
+            //
+			$table->string('note');
         });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -28,6 +25,9 @@ class CreateTodolistsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('todolists');
+        Schema::table('todolists', function (Blueprint $table) {
+            //
+			$table->dropColumn('note');
+        });
     }
 }
