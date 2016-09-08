@@ -12,5 +12,8 @@
 */
 
 Route::get('/', 'WelcomeController@index');
+
+Route::resource('lists', 'ListsController');
+
     
 
