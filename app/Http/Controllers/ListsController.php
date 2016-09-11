@@ -3,8 +3,9 @@
 namespace Todoparrot\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use Todoparrot\Http\Requests;
+use Todoparrot\TodoList;
+
 
 class ListsController extends Controller
 {
@@ -15,8 +16,11 @@ class ListsController extends Controller
      */
     public function index()
     {
-        //
-		return view('lists.index');
+        // display all records
+		// Only use this for small number of records or with pagination
+	
+		$lists = TodoList::all();
+		return view('lists.index')->with('lists', $lists);
     }
 
     /**
@@ -48,7 +52,14 @@ class ListsController extends Controller
      */
     public function show($id)
     {
-        //
+        
+		try {
+			$list = Todolist::findOrFail($id);
+			return view('lists.show')->with('list', $list);
+		} catch(\Exception $e) {
+			\Debugbar::error('Lists Controller - show - No Data - id:' . $id);
+			echo 'No Data for List - id:' . $id;	
+		}
     }
 
     /**
@@ -82,6 +93,8 @@ class ListsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Todolist::destroy($id);
+		return \Redirect::route('list.index')
+			->withMessage('Record deleted!');
     }
 }
