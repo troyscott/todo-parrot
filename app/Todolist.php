@@ -13,4 +13,11 @@ class Todolist extends Model
 		
 	}
 	
+	public function categories()
+	{
+		return $this->belongsToMany('Todoparrot\Category')
+			->withTimestamps();	
+		
+	}
+	
 }
